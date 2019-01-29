@@ -1,0 +1,53 @@
+<!-- <div class="container">
+
+    <br>
+    <br>
+    <h2>
+      Show Task
+    </h2>
+    <br>
+    <br>
+<div *ngFor="let task of task">
+  <h2 class="page-header">{{task.taskName }}</h2>
+  <ul class="list-group">
+    <li class="list-group-item">TaskId :{{task.taskId  }}</li>
+    <li class="list-group-item">TaskName : {{task.taskName  }}</li>
+  </ul>
+</div>
+</div> -->
+
+<div class="container">
+
+  <br>
+  <br>
+  <h2>
+    Show Task
+  </h2>
+  <br>
+  <br>
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <td>TaskId</td>
+    <td>TaskName</td>
+    <td>TaskClientName</td>
+    <td>TaskDescription</td>
+    <td width="250" align="center">Action</td>
+  </tr>
+  </thead>
+  <tbody>
+   <tr  *ngFor="let task of tasks">
+    <td>	{{task.taskId}}	 </td>
+    <td>	{{task.taskName}} </td>
+    <td>	{{task.taskClientName}} </td>
+    <td>	{{task.taskDesc}} </td>
+    <td width="250"> 
+      <a class="btn btn-info" 	routerLink="/show/{{task._id}}">Detail</a> 
+      <!-- <a class="btn btn-primary"  		routerLink="/edittask/{{task._id}}">Edit</a> -->
+      <a class="btn btn-primary"  		routerLink="/edittask">Edit</a>
+      <a class="btn btn-danger" 				(click)=" ondeleteClick(task._id)" >Delete</a>
+    </td>
+   </tr>
+  </tbody>
+</table>
+</div>
